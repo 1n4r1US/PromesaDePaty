@@ -1,0 +1,111 @@
+
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;700&display=swap');
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #000;
+            color: white;
+            font-family: 'Montserrat', sans-serif;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .gradient-text {
+            background: linear-gradient(45deg, #00c6ff, #9d50bb);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: bold;
+        }
+
+        #input-container {
+            text-align: center;
+            z-index: 100;
+            transition: opacity 1s ease;
+        }
+
+        h1 {
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+            padding: 0 20px;
+        }
+
+        input {
+            background: transparent;
+            border: 2px solid transparent;
+            border-radius: 50px;
+            background-image: linear-gradient(#000, #000), linear-gradient(45deg, #00c6ff, #9d50bb);
+            background-origin: border-box;
+            background-clip: padding-box, border-box;
+            color: white;
+            padding: 12px;
+            font-size: 1.2rem;
+            outline: none;
+            text-align: center;
+            margin-bottom: 20px;
+            width: 250px;
+        }
+
+        button {
+            background: linear-gradient(45deg, #00c6ff, #9d50bb);
+            border: none;
+            color: white;
+            padding: 12px 40px;
+            font-size: 1rem;
+            cursor: pointer;
+            border-radius: 25px;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+
+        button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 15px rgba(157, 80, 187, 0.6);
+        }
+
+        /* Contenedor de la animación */
+        #heart-canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+
+        .name-particle {
+            position: absolute;
+            font-size: 10px;
+            white-space: nowrap;
+            opacity: 0;
+            animation: fadeIn 0.5s forwards;
+            user-select: none;
+        }
+
+        #final-message {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 3rem;
+            text-align: center;
+            opacity: 0;
+            transition: opacity 2s ease;
+            z-index: 200;
+            width: 90%;
+            text-shadow: 0 0 20px rgba(0,0,0,0.8);
+        }
+
+        @keyframes fadeIn {
+            to { opacity: 0.8; }
+        }
+
+        @media (max-width: 600px) {
+            h1 { font-size: 1.4rem; }
+            #final-message { font-size: 2rem; }
+        }
+    
